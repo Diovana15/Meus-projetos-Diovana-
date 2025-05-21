@@ -1,0 +1,13 @@
+Esse código está escrito em uma linguagem de programação didática inspirada em português estruturado, parecida com a usada no Portugol Studio. Ele implementa um sistema simples de cadastro de alunos, que coleta dados e exibe uma ficha com as informações. Abaixo está uma descrição detalhada de cada parte:
+
+Objetivo do Programa
+Cadastrar 10 alunos, garantindo:
+
+E-mails válidos (com @ e .),
+
+Matrículas únicas,
+
+Dados do responsável para menores de 18 anos,
+
+Exibir a ficha completa de cada aluno.
+
