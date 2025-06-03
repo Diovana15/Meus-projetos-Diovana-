@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo</title>
+    <style>
+        /* Estilos CSS integrados */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        /* Estilização do Formulário */
+        #resumeForm .form-group {
+            margin-bottom: 15px;
+        }
+
+        #resumeForm label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        #resumeForm input[type="text"],
+        #resumeForm input[type="email"],
+        #resumeForm input[type="tel"],
+        #resumeForm textarea {
+            width: calc(100% - 20px); 
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box; 
+            font-size: 16px;
+        }
+
+        #resumeForm textarea {
+            resize: vertical; /* Permite redimensionamento vertical */
+        }
+
+        #resumeForm button[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            width: 100%;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        #resumeForm button[type="submit"]:hover {
+            background-color: #3f00b3;
+        }
+
+        /* Estilização da Saída do Currículo */
+        .resume-output {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            margin-top: 30px;
+            border: 1px dashed #ccc;
+            min-height: 100px; /* Espaço reservado quando vazio */
+        }
+
+        .resume-output h2 {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        .resume-output h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .resume-output p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .resume-output strong {
+            color: #333;
+        }
+
+        .resume-output img {
+            display: block;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border: 3px solid #007bff;
+        }
+
+        .resume-output .name {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .resume-output .contact-info {
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .download-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            width: 100%;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Currículo</h1>
+
+        <form id="resumeForm">
+            <div class="form-group">
+                <label for="profilePicture">Foto de Perfil:</label>
+                <input type="file" id="profilePicture" accept="image/*">
+            </div>
+
+            <div class="form-group">
+                <label for="fullName">Nome Completo:</label>
+                <input type="text" id="fullName" placeholder=" " required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" placeholder=" " required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Telefone:</label>
+                <input type="tel" id="phone" placeholder="( )">
+            </div>
+
+            <div class="form-group">
+                <label for="cityState">Cidade/Estado:</label>
+                <input type="text" id="cityState" placeholder=" ">
+            </div>
+
+            <div class="form-group">
+                <label for="professionalObjective">Objetivo Profissional:</label>
+                <textarea id="professionalObjective" rows="4" placeholder="Buscar uma posição desafiadora..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="education">Formação Acadêmica:</label>
+                <textarea id="education" rows="4" placeholder="Nome da Universidade, Curso, Ano de Conclusão..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="experience">Experiência Profissional:</label>
+                <textarea id="experience" rows="6" placeholder="Nome da Empresa, Cargo, Datas, Responsabilidades..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="complementaryCourses">Cursos Complementares:</label>
+                <textarea id="complementaryCourses" rows="3" placeholder="Nome do Curso, Instituição, Ano..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="languages">Idiomas:</label>
+                <textarea id="languages" rows="2" placeholder="Inglês (Fluente), Espanhol (Intermediário)..."></textarea>
+            </div>
+
+            <button type="submit">Gerar Currículo</button>
+        </form>
+
+        <div id="resumeOutput" class="resume-output">
+            </div>
+
+        <button id="downloadPdfBtn" class="download-btn" style="display: none;">Baixar em PDF</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+
+    <script>
+        // Código JavaScript integrado
+        document.addEventListener('DOMContentLoaded', () => {
+            const resumeForm = document.getElementById('resumeForm');
+            const resumeOutput = document.getElementById('resumeOutput');
+            const profilePictureInput = document.getElementById('profilePicture');
+            const downloadPdfBtn = document.getElementById('downloadPdfBtn');
+            let profilePictureUrl = '';
+
+            // Lida com a seleção da foto de perfil
+            profilePictureInput.addEventListener('change', (event) => {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        profilePictureUrl = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    profilePictureUrl = '';
+                }
+            });
+
+            resumeForm.addEventListener('submit', (event) => {
+                event.preventDefault(); // Impede o envio padrão do formulário
+
+                // Captura os dados dos campos do formulário
+                const fullName = document.getElementById('fullName').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const cityState = document.getElementById('cityState').value;
+                const professionalObjective = document.getElementById('professionalObjective').value;
+                const education = document.getElementById('education').value;
+                const experience = document.getElementById('experience').value;
+                const complementaryCourses = document.getElementById('complementaryCourses').value;
+                const languages = document.getElementById('languages').value;
+
+                // Cria o texto formatado do currículo
+                let resumeContent = '';
+
+                if (profilePictureUrl) {
+                    resumeContent += `<img src="${profilePictureUrl}" alt="Foto de Perfil">`;
+                }
+                resumeContent += `<h1 class="name">${fullName || 'Seu Nome'}</h1>`;
+                resumeContent += `<p class="contact-info">${email || ''} | ${phone || ''} | ${cityState || ''}</p>`;
+
+                if (professionalObjective) {
+                    resumeContent += `<h2>Objetivo Profissional</h2><p>${professionalObjective}</p>`;
+                }
+                if (education) {
+                    resumeContent += `<h2>Formação Acadêmica</h2><p>${education.replace(/\n/g, '<br>')}</p>`;
+                }
+                if (experience) {
+                    resumeContent += `<h2>Experiência Profissional</h2><p>${experience.replace(/\n/g, '<br>')}</p>`;
+                }
+                if (complementaryCourses) {
+                    resumeContent += `<h2>Cursos Complementares</h2><p>${complementaryCourses.replace(/\n/g, '<br>')}</p>`;
+                }
+                if (languages) {
+                    resumeContent += `<h2>Idiomas</h2><p>${languages.replace(/\n/g, '<br>')}</p>`;
+                }
+
+                // Exibe o currículo formatado
+                resumeOutput.innerHTML = resumeContent;
+
+                // Mostra o botão de download do PDF
+                downloadPdfBtn.style.display = 'block';
+            });
+
+            // Lida com o download do PDF
+            downloadPdfBtn.addEventListener('click', () => {
+                const element = document.getElementById('resumeOutput');
+                html2pdf(element, {
+                    margin: 10,
+                    filename: 'curriculo.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2, logging: true, dpi: 192, letterRendering: true },
+                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
